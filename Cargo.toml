@@ -1,0 +1,25 @@
+[package]
+name = "path-table"
+version = "1.0.0"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/rust-net-web/path-table"
+documentation = "https://docs.rs/path-table"
+description = "Path-based routing table."
+keywords = ["path", "routing", "router", "http", "web"]
+categories = [
+  "network-programming",
+  "web-programming",
+  "web-programming::http-client",
+  "web-programming::http-server"
+]
+authors = [
+    "Aaron Turon <aturon@mozilla.com>",
+    "Wonwoo Choi <chwo9843@gmail.com>",
+    "Yoshua Wuyts <yoshuawuyts@gmail.com>",
+]
+readme = "README.md"
+edition = "2018"
+
+[dependencies]
+
+[dev-dependencies]
