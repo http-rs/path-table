@@ -1,3 +1,4 @@
+#![deny(unsafe_code)]
 #![warn(
     nonstandard_style,
     rust_2018_idioms,
@@ -334,7 +335,7 @@ impl<'a, R> Iterator for ResourcesMut<'a, R> {
 }
 
 #[cfg(test)]
-mod test {
+mod tests {
     use std::collections::HashSet;
 
     use super::*;
