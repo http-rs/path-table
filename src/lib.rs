@@ -1,3 +1,10 @@
+#![warn(
+    nonstandard_style,
+    rust_2018_idioms,
+    future_incompatible,
+    missing_debug_implementations
+)]
+
 //! Generic types for path-based routing.
 
 use std::collections::HashMap;
@@ -24,7 +31,7 @@ enum WildcardKind {
 }
 
 impl std::fmt::Display for WildcardKind {
-    fn fmt(&self, fmt: &mut std::fmt::Formatter) -> std::fmt::Result {
+    fn fmt(&self, fmt: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
             WildcardKind::Segment => Ok(()),
             WildcardKind::CatchAll => write!(fmt, "*"),
@@ -49,10 +56,10 @@ pub struct RouteMatch<'a> {
 }
 
 impl<R> std::fmt::Debug for PathTable<R> {
-    fn fmt(&self, fmt: &mut std::fmt::Formatter) -> std::fmt::Result {
+    fn fmt(&self, fmt: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         struct Children<'a, R>(&'a HashMap<String, PathTable<R>>, Option<&'a Wildcard<R>>);
         impl<'a, R> std::fmt::Debug for Children<'a, R> {
-            fn fmt(&self, fmt: &mut std::fmt::Formatter) -> std::fmt::Result {
+            fn fmt(&self, fmt: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
                 let mut dbg = fmt.debug_map();
                 dbg.entries(self.0.iter());
                 if let Some(wildcard) = self.1 {
@@ -112,12 +119,12 @@ impl<R> PathTable<R> {
     }
 
     /// Return an iterator of all resources.
-    pub fn iter(&self) -> Resources<R> {
+    pub fn iter(&self) -> Resources<'_, R> {
         Resources { stack: vec![self] }
     }
 
     /// Return a mutable iterator of all resources.
-    pub fn iter_mut(&mut self) -> ResourcesMut<R> {
+    pub fn iter_mut(&mut self) -> ResourcesMut<'_, R> {
         ResourcesMut { stack: vec![self] }
     }
 
@@ -281,6 +288,7 @@ impl<R: Default> PathTable<R> {
 }
 
 /// An iterator over the resources of a `PathTable`.
+#[derive(Debug)]
 pub struct Resources<'a, R> {
     stack: Vec<&'a PathTable<R>>,
 }
@@ -303,6 +311,7 @@ impl<'a, R> Iterator for Resources<'a, R> {
 }
 
 /// A mutable iterator over the resources of a `PathTable`.
+#[derive(Debug)]
 pub struct ResourcesMut<'a, R> {
     stack: Vec<&'a mut PathTable<R>>,
 }
