@@ -9,10 +9,8 @@ Path-based routing table.
 - [Releases][releases]
 
 ## Examples
-__Basic usage__
-```rust
-// tbi
-```
+
+Examples are located in the [examples](examples) directory.
 
 ## Installation
 ```sh
