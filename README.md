@@ -36,14 +36,14 @@ None.
 
 [1]: https://img.shields.io/crates/v/path-table.svg?style=flat-square
 [2]: https://crates.io/crates/path-table
-[3]: https://img.shields.io/travis/rust-net-web/path-table/master.svg?style=flat-square
-[4]: https://travis-ci.org/rust-net-web/path-table
+[3]: https://img.shields.io/travis/rustasync/path-table/master.svg?style=flat-square
+[4]: https://travis-ci.org/rustasync/path-table
 [5]: https://img.shields.io/crates/d/path-table.svg?style=flat-square
 [6]: https://crates.io/crates/path-table
 [7]: https://img.shields.io/badge/docs-latest-blue.svg?style=flat-square
 [8]: https://docs.rs/path-table
 
-[releases]: https://github.com/rust-net-web/path-table/releases
-[contributing]: https://github.com/rust-net-web/path-table/blob/master.github/CONTRIBUTING.md
-[good-first-issue]: https://github.com/rust-net-web/path-table/labels/good%20first%20issue
-[help-wanted]: https://github.com/rust-net-web/path-table/labels/help%20wanted
+[releases]: https://github.com/rustasync/path-table/releases
+[contributing]: https://github.com/rustasync/path-table/blob/master/.github/CONTRIBUTING.md
+[good-first-issue]: https://github.com/rustasync/path-table/labels/good%20first%20issue
+[help-wanted]: https://github.com/rustasync/path-table/labels/help%20wanted

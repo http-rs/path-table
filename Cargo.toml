@@ -2,7 +2,7 @@
 name = "path-table"
 version = "1.0.0"
 license = "MIT OR Apache-2.0"
-repository = "https://github.com/rust-net-web/path-table"
+repository = "https://github.com/rustasync/path-table"
 documentation = "https://docs.rs/path-table"
 description = "Path-based routing table."
 keywords = ["path", "routing", "router", "http", "web"]
